@@ -1,0 +1,46 @@
+:root{--night:#14061f;--plum:#2d0f45;--gold:#ffb627;--saffron:#ff7a18;--rose:#e0245e;--cream:#fff3d6;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html,body{height:100%;margin:0}
+body{background:var(--night) radial-gradient(ellipse 120% 80% at 50% 105%,#5a1654 0,var(--plum) 40%,var(--night) 78%);color:var(--cream);font-family:'Hind','Segoe UI',system-ui,sans-serif;overflow-x:hidden}
+[hidden]{display:none!important}
+#fx{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+main{position:relative;z-index:1;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px 16px;gap:18px}
+#mandala{position:absolute;left:50%;top:50%;width:min(96vw,680px);aspect-ratio:1;transform:translate(-50%,-50%);z-index:-1;opacity:.28;pointer-events:none}
+#mandala svg{width:100%;height:100%;animation:spin 140s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+h1{font-family:'Yatra One',Georgia,serif;font-weight:400;font-size:clamp(2.4rem,8.5vw,5.2rem);line-height:1.08;margin:0;color:var(--gold);text-shadow:0 0 28px rgba(255,140,30,.55);max-width:14ch;overflow-wrap:anywhere}
+.sub{margin:0;max-width:36ch;font-size:1.1rem;line-height:1.5;opacity:.88}
+.who{display:flex;flex-direction:column;gap:6px;align-items:center;font-size:.95rem;opacity:.9}
+.who input{width:min(280px,80vw);background:transparent;border:0;border-bottom:2px solid var(--gold);color:var(--cream);font:inherit;font-size:1.2rem;text-align:center;padding:6px 4px;outline:none;border-radius:0}
+.who input:focus-visible{border-bottom-color:var(--cream);box-shadow:0 6px 14px -8px var(--gold)}
+.who input::placeholder{color:rgba(255,243,214,.45)}
+.diyas{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(4px,2vw,22px);margin-top:6px}
+.diya{position:relative;background:none;border:0;padding:0;margin:0;cursor:pointer;color:inherit;font:inherit;width:clamp(62px,15.5vw,106px);-webkit-tap-highlight-color:transparent}
+.diya svg{display:block;width:100%;overflow:visible}
+.diya:focus-visible{outline:2px solid var(--cream);outline-offset:6px;border-radius:12px}
+.glow{position:absolute;left:50%;top:0;width:230%;aspect-ratio:1;transform:translate(-50%,-32%) scale(.3);background:radial-gradient(circle,rgba(255,170,40,.6),rgba(255,120,20,.15) 40%,transparent 65%);opacity:0;transition:opacity .6s,transform .8s;pointer-events:none}
+.lit .glow{opacity:1;transform:translate(-50%,-32%) scale(1)}
+.flame{transform-box:fill-box;transform-origin:50% 100%;transform:scale(0);transition:transform .45s cubic-bezier(.3,1.7,.5,1)}
+.lit .flame{transform:scale(1);animation:flick .16s ease-in-out infinite alternate .45s}
+@keyframes flick{from{transform:scale(1) skewX(-3deg)}to{transform:scale(1.07,.93) skewX(3deg)}}
+.diya span{display:block;margin-top:2px;font-family:'Yatra One',Georgia,serif;font-size:1rem;color:var(--gold);opacity:0;transform:translateY(-4px);transition:opacity .5s .2s,transform .5s .2s}
+.lit span{opacity:1;transform:none}
+#hint{margin:0;min-height:1.6em;font-size:1rem;opacity:.85}
+.card{max-width:520px;padding:22px 26px 24px;border:1px solid rgba(255,182,39,.55);border-radius:20px;background:rgba(45,15,69,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);animation:pop .8s cubic-bezier(.2,1.5,.4,1)}
+@keyframes pop{from{opacity:0;transform:scale(.7) translateY(20px)}to{opacity:1;transform:none}}
+.card h2{font-family:'Yatra One',Georgia,serif;font-weight:400;font-size:clamp(1.7rem,6vw,2.4rem);margin:0 0 8px;color:var(--gold)}
+.card p{margin:0 0 16px;font-size:1.1rem;line-height:1.6}
+.row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn{font:inherit;font-weight:600;font-size:1rem;color:#2a0d1e;background:linear-gradient(135deg,var(--gold),var(--saffron));border:0;border-radius:999px;padding:11px 22px;cursor:pointer;box-shadow:0 6px 20px -6px rgba(255,140,30,.8);transition:transform .15s}
+.btn:active{transform:scale(.95)}
+.btn.alt{background:transparent;color:var(--cream);border:1.5px solid var(--gold);box-shadow:none}
+.btn:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){#mandala svg,.lit .flame{animation:none}.card{animation:none}}
+.corner{position:fixed;top:max(14px,env(safe-area-inset-top,0px));right:14px;z-index:3;padding:8px 16px;border:1px solid rgba(255,182,39,.55);border-radius:999px;background:rgba(45,15,69,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:var(--cream);text-decoration:none;font-size:.9rem;opacity:.75;transition:opacity .2s}
+.corner:hover,.corner:focus-visible{opacity:1}
+.corner:focus-visible{outline:2px solid var(--cream);outline-offset:3px}
+.maker{display:flex;flex-direction:column;gap:16px;align-items:center;width:min(480px,100%)}
+.out{width:100%;background:rgba(20,6,31,.6);color:var(--cream);border:1px solid rgba(255,182,39,.5);border-radius:10px;padding:10px 12px;font:inherit;font-size:.9rem}
+.btn{display:inline-block;text-decoration:none}
+.back{color:var(--gold);font-size:.95rem}
+#note{min-height:1.3em;margin:0;font-size:.9rem;opacity:.85}

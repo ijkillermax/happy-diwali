@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Diwali</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2314061f'/%3E%3Cpath d='M50 12C62 30 68 43 50 58C32 43 38 30 50 12Z' fill='%23ffb627'/%3E%3Cpath d='M14 62Q50 100 86 62Q86 56 50 56Q14 56 14 62Z' fill='%23ee7a2c'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#14061f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Hind:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<linearGradient id="fl" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff4d00"/><stop offset=".5" stop-color="#ffb627"/><stop offset="1" stop-color="#fff7c2"/></linearGradient>
+<linearGradient id="cl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ee7a2c"/><stop offset="1" stop-color="#8f2d12"/></linearGradient>
+</defs></svg>
+<canvas id="fx" aria-hidden="true"></canvas>
+<a class="corner" href="create.html">Create a link</a>
+<main>
+  <div id="mandala" aria-hidden="true"></div>
+  <h1 id="title">Happy Diwali</h1>
+  <p class="sub">The festival of lights is here. Light the five diyas to open your wish.</p>
+  <div class="diyas" id="diyas"></div>
+  <p id="hint" aria-live="polite">Tap a diya to light it. Tap the sky for crackers.</p>
+  <section class="card" id="card" hidden>
+    <h2>Shubh Deepavali</h2>
+    <p id="wish"></p>
+    <div class="row">
+      <button class="btn" id="sky" type="button">Light up the sky</button>
+      </div>
+  </section>
+</main>
+<script src="script.js" defer></script>
+</body>
+</html>
